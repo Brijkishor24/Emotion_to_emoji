@@ -1,0 +1,44 @@
+body
+{
+  color: white;
+  background: darkcyan;
+}
+span
+{
+  font-size: 30px;
+}
+#camera , #result
+{
+  border: 2px dashed black;
+  width: 350px;
+  height: 300px; 
+}
+#result_emotion_name ,#result_emotion_name2  
+{
+  color: greenyellow;
+  font-family: 'Chilanka', cursive;
+}
+.emotion_name
+{
+  font-size: 40px;
+}
+.emoji
+{
+  font-size:48px;
+}
+.heading{
+  font-size:20px;
+  letter-spacing:10px;
+}
+label{
+  font-size: 30px;
+  color: lightsalmon;
+  font-family: 'Sansita Swashed', cursive;
+}
+#predict_emoji,#capture_image{
+  font-size:25px;
+  font-family: 'Merriweather', serif;
+  border: red;
+  border-style: groove;
+  border-width: 10px;
+}
