@@ -17,3 +17,38 @@ classifier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/_
 function modelloaded(){
     console.log("Model loaded");
 }
+function predict_emoji() {
+  img=document.getElementById("captured_image");
+  classifier.classify(img,getResult);
+}
+function getResult(error,results) {
+    if(error){
+        console.error(error);
+    }
+    else{
+        console.log(results);
+        document.getElementById("result_emotion_name").innerHTML=results[0].label;
+        document.getElementById("result_emotion_name2").innerHTML=results[1].label;
+ 
+        if(results[0].label=="Happy"){
+            document.getElementById("update_emoji").innerHTML="&#128512;"+"&nbsp"+"&#128522;";
+        }
+        else if(results[0].label=="Sad"){
+            document.getElementById("update_emoji").innerHTML="&#128532;"+"&nbsp"+"&#128546;";
+        }
+        else if(results[0].label=="Angry"){
+            document.getElementById("update_emoji").innerHTML="&#128545;"+"&nbsp"+"&#128548;";
+        }
+
+        if(results[1].label=="Happy"){
+            document.getElementById("update_emoji2").innerHTML="&#128512;"+"&nbsp"+"&#128522;";
+        }
+        else if(results[1].label=="Sad"){
+            document.getElementById("update_emoji2").innerHTML="&#128532;"+"&nbsp"+"&#128546;";
+        }
+        else if(results[1].label=="Angry"){
+            document.getElementById("update_emoji2").innerHTML="&#128545;"+"&nbsp"+"&#128548;";
+        }
+
+    }
+}
